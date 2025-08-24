@@ -18,6 +18,9 @@ body {
 		margin: 0;
 		width: 100%;
 		height: 100%;
+		min-height: 100vh;
+		background: linear-gradient(120deg, #e0e7ff 0%, #f0fdfa 100%);
+		/* ほんのり淡いグラデーション */
 }
 
 main, .markdown-body {
@@ -25,10 +28,11 @@ main, .markdown-body {
 	margin-left: auto;
 	margin-right: auto;
 	padding: 2.5rem 1.2rem 3rem 1.2rem;
-	background: #fff;
+	background: rgba(255,255,255,0.92);
 	border-radius: 1.5rem;
 	box-shadow: 0 4px 32px 0 rgba(0,0,0,0.07);
 	font-family: 'Segoe UI', 'Hiragino Sans', 'Meiryo', sans-serif;
+	backdrop-filter: blur(1.5px);
 }
 
 /* Markdown headings */
@@ -40,46 +44,76 @@ h1, h2, h3, h4, h5, h6 {
 	margin-bottom: 0.7em;
 	line-height: 1.2;
 }
-h1 { font-size: 2.1rem; border-bottom: 2px solid #a5b4fc; padding-bottom: 0.3em; }
+h1 {
+	font-size: 2.3rem;
+	border-bottom: 3px solid #6366f1;
+	padding-bottom: 0.35em;
+	background: linear-gradient(90deg, #a5b4fc 0%, #f0fdfa 100%);
+	border-radius: 0.7em 0.7em 0 0;
+	box-shadow: 0 2px 12px 0 rgba(99,102,241,0.07);
+	text-align: center;
+	margin-bottom: 2.2rem;
+}
 h2 { font-size: 1.5rem; border-left: 5px solid #a5b4fc; padding-left: 0.5em; }
 h3 { font-size: 1.2rem; color: #0e7490; }
 
 /* Markdown lists */
 ul, ol {
-	padding-left: 1.5em;
-	margin-bottom: 1.2em;
+	padding-left: 1.7em;
+	margin-bottom: 1.5em;
 }
 li {
-	margin-bottom: 0.3em;
-	line-height: 1.7;
+	margin-bottom: 0.5em;
+	line-height: 1.8;
+	font-size: 1.04em;
 }
 
 /* Markdown blockquote */
 blockquote {
-	border-left: 4px solid #a5b4fc;
-	background: #f0fdfa;
+	border-left: 6px solid #6366f1;
+	background: linear-gradient(90deg, #f0fdfa 60%, #e0e7ff 100%);
 	color: #334155;
-	margin: 1.5em 0;
-	padding: 1em 1.5em;
-	border-radius: 0.7em;
+	margin: 2.2em 0;
+	padding: 1.2em 2em 1.2em 1.5em;
+	border-radius: 1em;
 	font-style: italic;
+	font-size: 1.08em;
+	box-shadow: 0 2px 12px 0 rgba(99,102,241,0.06);
+	position: relative;
+}
+blockquote::before {
+	content: '“';
+	color: #6366f1;
+	font-size: 2.2em;
+	position: absolute;
+	left: 0.4em;
+	top: 0.1em;
+	opacity: 0.18;
 }
 
 /* Markdown links */
 a {
 	color: #2563eb;
 	text-decoration: underline;
-	transition: color 0.2s;
+	font-weight: 600;
+	transition: color 0.2s, background 0.2s;
+	border-radius: 0.3em;
+	padding: 0.1em 0.2em;
 }
 a:hover {
-	color: #0e7490;
+	color: #fff;
+	background: #6366f1;
 }
 
 /* Markdown hr */
 hr {
 	border: none;
-	border-top: 2px dashed #a5b4fc;
-	margin: 2.5em 0;
+	border-top: 2.5px dashed #6366f1;
+	margin: 3em 0;
+}
+/* セクション間の余白を強調 */
+.markdown-body > h2, main > h2 {
+	margin-top: 3.2rem;
 }
 
 /* Markdown table */
