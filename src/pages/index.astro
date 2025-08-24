@@ -1,168 +1,193 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import Welcome from "../components/Welcome.astro";
+import Layout from "../layouts/Layout.astro";
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
 <Layout>
-<div class="index-root">
-	<h1 class="main-title">shoの活動日誌</h1>
-	<p class="description">プロフィールを載せる、技術記事を書く、書評を書くなどをしていく予定です。</p>
+	<div class="index-root">
+		<h1 class="main-title">shoの活動日誌</h1>
+		<p class="description">
+			プロフィールを載せる、技術記事を書く、書評を書くなどをしていく予定です。
+		</p>
 
-	<section aria-labelledby="profile-heading" class="profile-section center-section align-left">
-		<h2 id="profile-heading" class="section-title">プロフィール</h2>
-		<nav class="profile-nav vertical-nav">
-			<ul class="profile-list vertical-list align-list">
-				<li><a class="profile-link simple-link" href="/my-portfolio/tech-profile">技術系プロフィールを見る</a></li>
-				<li><a class="profile-link simple-link" href="/my-portfolio/personal-profile">非技術系プロフィールを見る</a></li>
-			</ul>
-		</nav>
-	</section>
+		<section
+			aria-labelledby="profile-heading"
+			class="profile-section center-section align-left"
+		>
+			<h2 id="profile-heading" class="section-title">プロフィール</h2>
+			<nav class="profile-nav vertical-nav">
+				<ul class="profile-list vertical-list align-list">
+					<li>
+						<a
+							class="profile-link simple-link"
+							href="/my-portfolio/tech-profile"
+							>技術系プロフィールを見る</a>
+					</li>
+					<li>
+						<a
+							class="profile-link simple-link"
+							href="/my-portfolio/personal-profile"
+							>非技術系プロフィールを見る</a>
+					</li>
+				</ul>
+			</nav>
+		</section>
 
-	<section aria-labelledby="blog-heading" class="blog-section center-section align-left">
-		<h2 id="blog-heading" class="section-title">ブログ記事</h2>
-		<nav class="blog-nav">
-			<ul class="profile-list vertical-list align-list">
-				<li><a class="profile-link simple-link" href="/my-portfolio/blog/books">独学で役立ったおすすめ技術書・教材リスト</a></li>
-			</ul>
-		</nav>
-	</section>
-</div>
+		<section
+			aria-labelledby="blog-heading"
+			class="blog-section center-section align-left"
+		>
+			<h2 id="blog-heading" class="section-title">ブログ記事</h2>
+			<nav class="blog-nav">
+				<ul class="profile-list vertical-list align-list">
+					<li>
+						<a
+							class="profile-link simple-link"
+							href="/my-portfolio/blog/books"
+							>独学で役立ったおすすめ技術書・教材リスト</a>
+					</li>
+				</ul>
+			</nav>
+		</section>
+	</div>
 </Layout>
 <style>
-.index-root {
-	min-height: 100vh;
-	display: flex;
-	flex-direction: column;
-	justify-content: flex-start;
-}
-.align-left {
-	align-items: flex-start !important;
-}
-.align-list {
-	align-items: flex-start !important;
-	padding-left: 0 !important;
-}
+	.index-root {
+		min-height: 100vh;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+	}
+	.align-left {
+		align-items: flex-start !important;
+	}
+	.align-list {
+		align-items: flex-start !important;
+		padding-left: 0 !important;
+	}
 </style>
 <style>
-.profile-list li + li {
-	padding-top: 0.18rem;
-}
-</style>
-
-<style>
-.main-title {
-	text-align: center;
-	font-size: 2.4rem;
-	font-weight: 800;
-	letter-spacing: 0.05em;
-	padding-top: 2.5rem;
-	padding-bottom: 0.5rem;
-	color: #1e293b;
-}
-.blog-section .vertical-list {
-	display: flex;
-	flex-direction: column;
-	gap: 0.5rem;
-	width: 100%;
-	padding: 0 0 0 0.5em;
-	list-style: none;
-	align-items: flex-start;
-}
-.description {
-	text-align: center;
-	font-size: 1.1rem;
-	color: #334155;
-	padding-bottom: 1.5rem;
-}
-.section-title {
-	font-size: 1.3rem;
-	font-weight: 700;
-	color: #475569;
-	padding-bottom: 0.2rem;
-	padding-left: 0.5em;
-	border-left: 4px solid #a5b4fc;
-	margin-bottom: 0.5rem;
-	margin-top: 2rem;
-}
-.center-section {
-	max-width: 600px;
-	margin-left: auto;
-	margin-right: auto;
-	margin-bottom: 1.2rem;
-	padding: 0.7rem 0 0.2rem 0;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-}
-.description {
-	text-align: center;
-	font-size: 1.1rem;
-	color: #334155;
-	padding-bottom: 0.7rem;
-}
-.vertical-nav {
-	width: 100%;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-}
-.vertical-list {
-	display: flex;
-	flex-direction: column;
-	width: 100%;
-	padding: 0 0 0 0.5em;
-	list-style: none;
-	align-items: flex-start;
-}
-.simple-link {
-	display: inline-block;
-	color: #334155;
-	background: none;
-	font-weight: 500;
-	font-size: 1.08rem;
-	text-decoration: underline;
-	border-radius: 0;
-	padding: 0.1em 0.2em;
-	box-shadow: none;
-	transition: color 0.18s;
-}
-.simple-link:hover {
-	color: #6366f1;
-	background: none;
-	text-decoration: underline;
-}
-/* ...既存のスタイル... */
+	.profile-list li + li {
+		padding-top: 0.18rem;
+	}
 </style>
 
 <style>
-.profile-nav {
-	padding-top: 0.5rem;
-	display: flex;
-	justify-content: center;
-}
-.profile-list {
-	list-style: none;
-	padding: 0;
-	display: flex;
-	flex-direction: column;
-}
-.profile-link {
-	display: block;
-	padding: 0.18rem 0.5rem;
-	background: none;
-	color: #222;
-	border-radius: 0.5rem;
-	text-decoration: none;
-	font-size: 1.08rem;
-	font-weight: 500;
-	box-shadow: none;
-	transition: background 0.2s, color 0.2s;
-}
-.profile-link:hover {
-	background: #f1f5f9;
-	color: #0e172a;
-}
+	.main-title {
+		text-align: center;
+		font-size: 2.4rem;
+		font-weight: 800;
+		letter-spacing: 0.05em;
+		padding-top: 2.5rem;
+		padding-bottom: 0.5rem;
+		color: #1e293b;
+	}
+	.blog-section .vertical-list {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+		width: 100%;
+		padding: 0 0 0 0.5em;
+		list-style: none;
+		align-items: flex-start;
+	}
+	.description {
+		text-align: center;
+		font-size: 1.1rem;
+		color: #334155;
+		padding-bottom: 1.5rem;
+	}
+	.section-title {
+		font-size: 1.3rem;
+		font-weight: 700;
+		color: #475569;
+		padding-bottom: 0.2rem;
+		padding-left: 0.5em;
+		border-left: 4px solid #a5b4fc;
+		margin-bottom: 0.5rem;
+		margin-top: 2rem;
+	}
+	.center-section {
+		max-width: 600px;
+		margin-left: auto;
+		margin-right: auto;
+		margin-bottom: 1.2rem;
+		padding: 0.7rem 0 0.2rem 0;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	.description {
+		text-align: center;
+		font-size: 1.1rem;
+		color: #334155;
+		padding-bottom: 0.7rem;
+	}
+	.vertical-nav {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	.vertical-list {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		padding: 0 0 0 0.5em;
+		list-style: none;
+		align-items: flex-start;
+	}
+	.simple-link {
+		display: inline-block;
+		color: #334155;
+		background: none;
+		font-weight: 500;
+		font-size: 1.08rem;
+		text-decoration: underline;
+		border-radius: 0;
+		padding: 0.1em 0.2em;
+		box-shadow: none;
+		transition: color 0.18s;
+	}
+	.simple-link:hover {
+		color: #6366f1;
+		background: none;
+		text-decoration: underline;
+	}
+	/* ...既存のスタイル... */
+</style>
+
+<style>
+	.profile-nav {
+		padding-top: 0.5rem;
+		display: flex;
+		justify-content: center;
+	}
+	.profile-list {
+		list-style: none;
+		padding: 0;
+		display: flex;
+		flex-direction: column;
+	}
+	.profile-link {
+		display: block;
+		padding: 0.18rem 0.5rem;
+		background: none;
+		color: #222;
+		border-radius: 0.5rem;
+		text-decoration: none;
+		font-size: 1.08rem;
+		font-weight: 500;
+		box-shadow: none;
+		transition:
+			background 0.2s,
+			color 0.2s;
+	}
+	.profile-link:hover {
+		background: #f1f5f9;
+		color: #0e172a;
+	}
 </style>
