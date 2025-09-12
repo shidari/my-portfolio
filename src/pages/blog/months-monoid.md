@@ -1,6 +1,7 @@
 ---
 title: "X 月の Y ヶ月後・前が何月か問題を、数学的構造で考える"
 date: 2025-08-25
+layout: ../../layouts/BlogPostLayout.astro
 ---
 # X 月の Y ヶ月後・前が何月か問題を、数学的構造で考える
 
@@ -251,3 +252,57 @@ $$
 このような「抽象化の力」を活かして、今後も様々な問題を捉え直していきたいと思います。
 
 また、今回のような一見簡単な問題でも、数学的構造から捉え直すことで新たな発見や面白さが生まれることを改めて実感しました。
+
+
+---
+
+## 【応用例】AtCoder Beginner Contest の時刻計算問題
+
+AtCoder Beginner Contest は通常、日本標準時で 21 時ちょうどに始まり 100 分間にわたって行われます。
+
+0 以上 100 以下の整数 K が与えられます。21 時ちょうどから K 分後の時刻を HH:MM の形式で出力してください。ただし、HH は 24 時間制での時間を、MM は分を表します。時間または分が 1 桁のときは、先頭に 0 を追加して 2 桁の整数として表してください。
+
+この問題も、時間を「分」として整数で扱い、24時間（1440分）でラップするモノイド的な構造で捉えることができます。
+
+### Haskellによる型安全・抽象化実装例
+
+```haskell
+type ErrorMessage = String
+
+newtype Range0To100 = Range0To100 Int
+
+newtype K = K Range0To100
+
+validate :: String -> Either ErrorMessage K
+validate s = case reads s of
+  [(n, "")] | n >= 0 && n <= 100 -> Right (K (Range0To100 n))
+  _ -> Left "Input must be an integer between 0 and 100"
+
+newtype Time = Time Int
+
+instance Semigroup Time where
+  (Time a) <> (Time b) = Time ((a + b) `mod` 1440) -- 24時間ラップ
+
+instance Monoid Time where
+  mempty = Time 0 -- 単位元は0分
+
+formatTime :: Time -> String
+formatTime (Time t) =
+  let hh = t `div` 60
+      mm = t `mod` 60
+   in pad hh ++ ":" ++ pad mm
+  where
+    pad x = if x < 10 then '0' : show x else show x
+
+solve :: K -> String
+solve (K (Range0To100 k)) =
+  let startTime = Time (21 * 60)
+   in formatTime (startTime <> Time k)
+
+main :: IO ()
+main = do
+  input <- getLine
+  either putStrLn putStrLn (validate input >>= (return . solve))
+```
+
+このように、「時刻の加算」もモノイド（または巡回群）として抽象化することで、条件分岐や例外処理を排除し、型安全かつ拡張性の高い実装が可能になります。
