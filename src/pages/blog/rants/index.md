@@ -26,3 +26,4 @@ title: "駄文・ラント"
 - [lean難しい](/my-portfolio/blog/rants/lean) (2025-09-29)
 - [アルゴリズムの早解きが苦手](/my-portfolio/blog/rants/algorithm) (2025-09-29)
 - [nix使ってstack buildができない、つらい](/my-portfolio/blog/rants/nix-stack) (2025-09-29)
+- [ページングの発想の転換](/my-portfolio/blog/rants/paging) (2025-09-29)
