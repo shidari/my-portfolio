@@ -24,3 +24,4 @@ title: "駄文・ラント"
 - [あ](/my-portfolio/blog/rants/offline) (2025-09-26)
 - [雑記・ポエム](/my-portfolio/blog/rants/poem) (2025-09-29)
 - [lean難しい](/my-portfolio/blog/rants/lean) (2025-09-29)
+- [アルゴリズムの早解きが苦手](/my-portfolio/blog/rants/algorithm) (2025-09-29)
