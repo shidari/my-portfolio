@@ -22,3 +22,4 @@ title: "駄文・ラント"
 ## 記事一覧
 
 - [あ](/my-portfolio/blog/rants/offline) (2025-09-26)
+- [雑記・ポエム](/my-portfolio/blog/rants/poem) (2025-09-29)
