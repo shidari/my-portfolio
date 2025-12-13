@@ -8,7 +8,6 @@ title: "ブログ記事一覧"
 
 - [競技プログラミング](/my-portfolio/blog/competitive-programming) - AtCoderなどの解答・解説
 - [数学演習](/my-portfolio/blog/math-exercises) - 数学の問題や証明
-- [駄文・ラント](/my-portfolio/blog/rants) - ⚠️ **閲覧注意** 思想の強い発言がいっぱい
 
 ## 個別記事
 
